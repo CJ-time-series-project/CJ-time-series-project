@@ -10,8 +10,8 @@ def get_superstore_data(use_cache=True):
         print("Let me get that for you...")
         return pd.read_csv(filename)
     print("Sorry, nothing on file, let me create one for you...")
-    data = 'superstore'
-    url = f'mysql+pymysql://{user}:{password}@{host}/{data}'
+    data = 'superstore_db'
+    url = f'mysql+pymysql://{username}:{password}@{host}/{data}'
     query = '''
     SELECT *
         FROM orders
@@ -20,6 +20,6 @@ def get_superstore_data(use_cache=True):
         JOIN products USING (`Product ID`)
         JOIN regions USING (`Region ID`);
     '''
-    superstore_data = pd.read_sql(query, url)
-    superstore_data.to_csv(filename)
+    df = pd.read_sql(query, url)
+    df.to_csv(filename)
     return df
