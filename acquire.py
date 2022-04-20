@@ -27,7 +27,7 @@ def get_superstore_data(use_cache=True):
 def prep_superstore_data(df):
     df.drop(columns=['Unnamed: 0', 'Region ID', 'Product ID', 'Customer ID', 'Category ID', 'Country'], inplace=True)
     df.columns = df.columns.str.replace(' ', '_').str.lower()
-    df['order_date'] = pd.to_datetime(df['Order Date'])
+    df['order_date'] = pd.to_datetime(df['order_date'])
     df.set_index('order_date', inplace=True)
     df['avg_item_sales'] = df.sales/df.quantity
     df['original_sales'] = df.sales + df.discount
