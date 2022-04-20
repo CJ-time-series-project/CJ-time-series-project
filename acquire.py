@@ -10,7 +10,11 @@ def get_superstore_data(use_cache=True):
         print("Let me get that for you...")
         return pd.read_csv(filename)
     print("Sorry, nothing on file, let me create one for you...")
+<<<<<<< HEAD
     data = 'superstore'
+=======
+    data = 'superstore_db'
+>>>>>>> f201a8e6bfe36c9abe9d1ffe3e716eaa3a649dc7
     url = f'mysql+pymysql://{username}:{password}@{host}/{data}'
     query = '''
     SELECT *
