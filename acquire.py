@@ -30,3 +30,9 @@ def prep_superstore_data(df):
     df.set_index('Order Date', inplace=True)
     df.columns = df.columns.str.replace(' ', '_').str.lower()
     return df
+
+def time_split(df):
+    train = df[:'2015']
+    validate = df['2016']
+    test = df['2017':]
+    return train, validate, test
