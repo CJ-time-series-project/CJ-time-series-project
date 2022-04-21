@@ -125,13 +125,9 @@ Using Jupyter Notebook:
 ## Reproducibility:
 ### Steps to Reproduce
     1. Have your env file with proper credentials saved to the working directory
-
     2. Ensure that a .gitignore is properly made in order to keep privileged information private
-
     3. Clone repo from github to ensure availability of the acquire and prepare imports
-
     4. Ensure pandas, numpy, matplotlib, scipy, sklearn, and seaborn are available
-
     5. Follow steps outline in this README.md to run Final_Zillow_Report.ipynb
 
 ---
