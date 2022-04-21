@@ -6,16 +6,19 @@ Codeup - Innis Cohort - April 22, 2022
 ---
   
 ## Project Overview
+
 ---
  
 #### 1. Goals:
 - Determine the best way to launch a new marketing campaign in the near future.
 - Determine the target of the campaign.
 - Back reccomendations of target with statistics and visualizations.
+
 --- 
  
 #### 2. Description:
 Working as a data scientist at Superstore, the Vp of Marketing has come to our team and asked for insight in terms of growth opportunites for the next marketing campaign. He is in need of a better understanding of who we should target in our upcoming marketing campaing and what segments, categories, etc. we should focus on pushing.
+
 --- 
  
 #### 3. Initial Questions:
@@ -34,6 +37,7 @@ Working as a data scientist at Superstore, the Vp of Marketing has come to our t
 - Final Report - provides final presentation-ready wrangle and findings
 - Slide Deck - 2 visualizations and an executive summary with recommendations and rationale
 - 5-minute presentation to VP of Marketing 
+
 ---
 
 #### 5. Data Dictionary:
@@ -59,6 +63,7 @@ The final DataFrame used to explore the data for this project contains the follo
 |region_name           |  General area of US where order was placed: 'Central', 'South', 'East', 'West'  |  object    |
 |avg_items_sales       |  Average sale amount for each item in an order  |  int64    |
 |original_sales        |  Sale amount before any discounts are applied  |  int64    |
+
 ---
 
 ## PROJECT PLAN - USING THE DATA SCIENCE PIPELINE:
@@ -114,6 +119,7 @@ Using Jupyter Notebook:
 - [x] Explicitly define questions asked during the initial analysis
 - [x] Visualize relationships
 - [x] Document takeaways
+
 ---
   
 ## Reproducibility:
@@ -127,6 +133,7 @@ Using Jupyter Notebook:
     4. Ensure pandas, numpy, matplotlib, scipy, sklearn, and seaborn are available
 
     5. Follow steps outline in this README.md to run Final_Zillow_Report.ipynb
+
 ---
 
 ## KEY TAKEAWAYS:
@@ -148,6 +155,8 @@ With more time, I would like to:
 
 - Dive into Illinois' issues and the impact of proper marketing
 - Look into how to improve the impact of profit by individual products
+
+--- 
 
 
 
