@@ -123,7 +123,7 @@ Using Jupyter Notebook:
 ---
   
 ## Reproducibility:
-### Steps to Reproduce
+### Steps to Reproduce:
 1. Have your env file with proper credentials saved to the working directory
 2. Ensure that a .gitignore is properly made in order to keep privileged information private
 3. Clone repo from github to ensure availability of the acquire and prepare imports
@@ -138,7 +138,7 @@ Using Jupyter Notebook:
 Marketing can offer the greatest impact for the Central region. In particular, the state of Texas has the greatest loss of profit with the company's largest profit-hemorraging cities in Houston and San Antonio. We believe that the best foot forward is to stop offering discounts in order to help individal categories but rather offer discounting based on quantity of product sold per order.
 
 
-#### The goals of this project were to 
+#### The goals of this project were to:
 - Determine the best way to launch a new marketing campaign in the near future
 - Determine the target of the campaign
 - Back reccomendations of target with statistics and visualizations
