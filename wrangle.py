@@ -39,3 +39,4 @@ def time_split(df):
     validate = df['2016']
     test = df['2017':]
     return train, validate, test
+
