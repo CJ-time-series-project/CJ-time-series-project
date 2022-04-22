@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
+import scipy.stats as stats
 
 def yearly_cat_profits(df):
     company_cat_profit = (df[['profit','category']].groupby('category')
@@ -63,3 +64,52 @@ def neg_profit_tx(df):
     plt.show()
     return
 
+def region_ttest(df):
+    alpha = .05
+    region_sample = df[df.region_name == 'Central'].profit
+    overall_mean = df.profit.mean()
+    t, p = stats.ttest_1samp(region_sample, overall_mean)
+    print('==========================================================')
+    print(f'Alpha: {alpha}')
+    print(f'P-Value: {p:.5f}')
+    if p/2 > alpha:
+        print('We fail to reject the Null Hypothesis, therefore mean of central region is not significantly different from overall mean')
+    elif t > 0:
+        print('We fail to reject the Null Hypothesis, therefore mean of central region is not significantly different from overall mean')
+    else:
+        print('We reject the Null Hypothesis, therefore mean of central\nregion is significantly different from overall mean.')
+    print('==========================================================')
+    return 
+
+def state_ttest(df):
+    alpha = .05
+    central_region = df.loc[df['region_name'] == 'Central']
+    state_sample = central_region[central_region.state == 'Texas'].profit
+    overall_mean = central_region.profit.mean()
+    t, p = stats.ttest_1samp(state_sample, overall_mean)
+    print('==========================================================')
+    print(f'Alpha: {alpha}')
+    print(f'P-Value: {p:.5f}')
+    if p/2 > alpha:
+        print('We fail to reject the Null Hypothesis, therefore mean of Texas profit is not significantly different from overall mean profit.')
+    elif t > 0:
+        print('We fail to reject the Null Hypothesis, therefore mean of \nTexas profit is not significantly different from overall mean profit.')
+    else:
+        print('We reject the Null Hypothesis, therefore mean of \nTexas profit is significantly different from the overall mean proft.')
+    print('==========================================================')
+    return 
+
+def pearson_corr(df):
+    alpha = .05
+    furniture = df[df.category == 'Furniture']
+    r, p = stats.pearsonr(furniture.profit, furniture.discount)
+    print('==========================================================')
+    print(f'Alpha: {alpha}')
+    print(f'Pearson r: {r}')
+    print(f'P-Value: {p:.5f}')
+    if p > alpha:
+        print('We fail to reject the Null Hypothesis, therefore there is no linear correlation between the furniture profit and the discount.')
+    else:
+        print('We reject the Null Hypothesis, therefore there is linear\ncorrelation between the furniture profit and the discount.')
+        print('==========================================================')
+    return
