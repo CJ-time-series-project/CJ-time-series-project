@@ -113,3 +113,4 @@ def pearson_corr(df):
         print('We reject the Null Hypothesis, therefore there is linear\ncorrelation between the furniture profit and the discount.')
         print('==========================================================')
     return
+    
