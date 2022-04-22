@@ -13,16 +13,15 @@ def yearly_cat_profits(df):
     labels = [pd.to_datetime(t.get_text()).strftime('%Y') for t in ax.get_xticklabels()]
     ax.set_xticklabels(labels, rotation=45, ha='right')
     ax.set_yticklabels([f'${tick:,.0f}' for tick in ax.get_yticks()])
-    ax.set(ylabel='Profit', title='Yearly Profit By Category', xlabel='Year')
+    ax.set(ylabel='Profit', title='Yearly Profit For Each Category', xlabel='Year')
     return
 
 def yearly_discounts(df): 
     ax = df.groupby(['category', df.index.year])['discount'].sum().unstack(0).plot()
     ax.legend(loc='right', title='Product Category')
-    # labels = [pd.to_datetime(t.get_text()).strftime('%Y') for t in ax.get_xticklabels()]
     # ax.set_xticklabels(labels, rotation=45, ha='right')
     ax.set_yticklabels([f'{tick:,.0f}%' for tick in ax.get_yticks()])
-    ax.set(ylabel='Discount Percentage', title='Yearly Profit By Category', xlabel='Year')
+    ax.set(ylabel='Discount Percentage', title='Average Discount Percentage Over Time', xlabel='Year')
     return
     
 def profit_by_region(df):
@@ -31,7 +30,7 @@ def profit_by_region(df):
     sns.boxplot(x='region_name', y='profit', data=df1, palette='seismic')
     plt.xlabel('Region')
     plt.ylabel('Profit')
-    plt.title('Profit by Region')
+    plt.title('The Central Region Is The Only Region With Negative Profit')
     plt.ylim(-125, 125)
     plt.axhline(y=0, linestyle='--', color='red')
     plt.show()
@@ -45,7 +44,7 @@ def profit_by_state(df):
     plt.xticks(rotation=45)
     plt.xlabel('State')
     plt.ylabel('Profit')
-    plt.title('Profit by State in Central Region')
+    plt.title('Both Illinois and Texas Have Negative Profits but Texas is Double that of Illinois')
     plt.show()
     return
 
@@ -60,7 +59,7 @@ def neg_profit_tx(df):
     plt.xticks(rotation=45)
     plt.xlabel('City')
     plt.ylabel('Profit')
-    plt.title('Profit by City in Central Region, Texas')
+    plt.title('Houston and San Antonio Offer the Biggest Hit to Profit in Texas')
     plt.show()
     return
 
